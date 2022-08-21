@@ -10,7 +10,7 @@ resource "aws_security_group" "ssh_connection" {
     to_port          = ingress.value.to_port
     protocol         = ingress.value.protocol
     cidr_blocks      = ingress.value.cidr_blocks 
-  }
+   }
   }
   dynamic "egress"{
    for_each = var.egress_rules
@@ -19,7 +19,7 @@ resource "aws_security_group" "ssh_connection" {
     to_port          = egress.value.to_port
     protocol         = egress.value.protocol
     cidr_blocks      = egress.value.cidr_blocks 
-  }
+    }
   }
 }
 resource "aws_instance" "Platzi-VM" {
